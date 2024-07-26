@@ -1,7 +1,7 @@
 Name:		alsa-ucm-conf
 Summary:	Use Case Manager configuration for ALSA
 Version:	1.2.12
-Release:	1
+Release:	2
 License:	BSD 3-clause
 Source0:	https://www.alsa-project.org/files/pub/lib/alsa-ucm-conf-%{version}.tar.bz2
 BuildArch:	noarch
@@ -10,13 +10,11 @@ BuildArch:	noarch
 Use Case Manager configuration for ALSA
 
 %prep
-%autosetup -p1
-
 %build
 
 %install
-find ucm2 -type f -iname "*.conf" -exec install -vDm 644 {} "%{buildroot}%{_datadir}/alsa/"{} \;
-find ucm2 -type l -iname "*.conf" -exec cp -dv {} "%{buildroot}%{_datadir}/alsa/"{} \;
+mkdir -p %{buildroot}/%{_datadir}/alsa/ucm2
+tar xvjf %{SOURCE0} -C %{buildroot}/%{_datadir}/alsa --strip-components=1 "*/ucm2"
 
 %files
 %{_datadir}/alsa/ucm2/*
