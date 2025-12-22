@@ -1,8 +1,8 @@
 Name:		alsa-ucm-conf
 Summary:	Use Case Manager configuration for ALSA
-Version:	1.2.14
+Version:	1.2.15.1
 Release:	1
-License:	BSD 3-clause
+License:	BSD-3-Clause
 Source0:	https://www.alsa-project.org/files/pub/lib/alsa-ucm-conf-%{version}.tar.bz2
 BuildArch:	noarch
 
